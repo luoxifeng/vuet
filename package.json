@@ -6,9 +6,12 @@
   "scripts": {
     "cross-env": "node_modules/.bin/cross-env",
     "gulp": "node_modules/.bin/gulp",
-    "dev": "node examples/server",
+    "dev": "npm run cross-env NODE_ENV=development node examples/server",
     "dev:test": "npm run cross-env NODE_ENV=development npm run gulp",
-    "test": "npm run cross-env NODE_ENV=testing npm run gulp"
+    "test": "npm run cross-env NODE_ENV=testing npm run cross-env SERVER=true npm run gulp",
+    "e2e": "npm run cross-env NODE_ENV=testing npm run cross-env SERVER=true npm run gulp e2e",
+    "unit": "npm run cross-env NODE_ENV=testing npm run gulp unit",
+    "lint": "npm run cross-env NODE_ENV=testing npm run gulp lint"
   },
   "files": [
     "dist/",

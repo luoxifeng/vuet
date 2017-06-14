@@ -74,7 +74,7 @@ gulp.task('unit', ['build'], () => {
     }))
 })
 let server = null
-if (process.env.NODE_ENV === 'testing') {
+if (process.env.SERVER) {
   server = require('./examples/server')
 }
 const testcafe = require('gulp-testcafe')
